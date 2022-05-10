@@ -1,14 +1,16 @@
 const axios = require("axios");
 const { isTypedArray } = require("util/types");
 const { assert } = require("chai");
-const server = require("../server");
+
 const ClientModel = require("../models/Client");
 const { doesNotMatch } = require("assert");
 const dotenv = require("dotenv");
 dotenv.config();
 const nodemailer = require("nodemailer");
+const joi = require('joi');
+const { afterEach } = require("mocha");
 
-describe("Login testing", () => {
+describe("Login testing", async() => {
   it("Should Login", async () => {
     const body = {
       email: "zouheir.hm@hotmail.com",
@@ -122,4 +124,8 @@ describe('Email testing', () => {
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/client/email`, body)
     assert.equal(res.status, 200)
   })
+ 
+  return
+  
 })
+
