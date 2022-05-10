@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { isTypedArray } = require("util/types");
 const { assert } = require("chai");
-
+const server = require('../server')
 const ClientModel = require("../models/Client");
 const { doesNotMatch } = require("assert");
 const dotenv = require("dotenv");
