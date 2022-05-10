@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": " mocha --timeout 10000",
+    "test": " mocha --exit --timeout 10000",
     "start": "node server.js",
     "coverage": "nyc npm run test "
   },
@@ -25,6 +25,7 @@
     "jwt-decode": "^3.1.2",
     "localstorage-polyfill": "^1.0.1",
     "mocha": "^10.0.0",
+    "mockgoose": "^8.0.4",
     "mongoose": "^6.2.10",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.15",

@@ -26,7 +26,7 @@ const swaggerOptions = {
 
 
 
-mongoose.connect('mongodb+srv://mern:mongodb@cluster0.bii6v.mongodb.net/areeba?retryWrites=true&w=majority')
+ const db = mongoose.connect('mongodb+srv://mern:mongodb@cluster0.bii6v.mongodb.net/areeba?retryWrites=true&w=majority')
 .then((result) => {
     console.log('Connected to database')
 })
@@ -79,3 +79,6 @@ app.get('/read-cookies', (req,res) => {
 app.listen(3001, (req,res) => {
     console.log('Server running on port 3001')
 }) 
+
+
+module.exports = db

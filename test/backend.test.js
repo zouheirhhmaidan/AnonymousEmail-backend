@@ -1,7 +1,6 @@
 const axios = require("axios");
 const { isTypedArray } = require("util/types");
 const { assert } = require("chai");
-
 const ClientModel = require("../models/Client");
 const { doesNotMatch } = require("assert");
 const dotenv = require("dotenv");
@@ -9,8 +8,17 @@ dotenv.config();
 const nodemailer = require("nodemailer");
 const joi = require('joi');
 const { afterEach } = require("mocha");
+const { exitCode } = require("process");
+const { exist } = require("joi");
+const loginController = require('../controllers/loginController')
+const {login} = require("../models/Client")
+const server = require('../server')
+const conn = require('../server')
+const request = require('supertest')
+// jenkins
 
-describe("Login testing", async() => {
+describe("Login testing", () => {
+
   it("Should Login", async () => {
     const body = {
       email: "zouheir.hm@hotmail.com",
@@ -125,7 +133,8 @@ describe('Email testing', () => {
     assert.equal(res.status, 200)
   })
  
-  return
-  
 })
+
+
+
 
